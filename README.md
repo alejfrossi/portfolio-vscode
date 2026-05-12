@@ -2,6 +2,8 @@
 
 Un portfolio personal interactivo desarrollado con **React** y **TypeScript**, diseñado para replicar la experiencia visual y funcional del editor **Visual Studio Code**. Este proyecto demuestra habilidades en arquitectura de componentes, gestión de estados complejos y despliegue de funciones serverless.
 
+* **Link:** https://portfolio-alejfrossi.vercel.app/
+
 ## 🚀 Características Principales
 
 * **Interfaz Realista de IDE**: Incluye barra de actividades, explorador de archivos dinámico, sistema de pestañas funcionales y barra de estado.

@@ -35,7 +35,7 @@ export const projectsData: Record<Language, Project[]> = {
                 'Diseño responsive adaptado para ofrecer una experiencia similar a VS Code en móviles.'
             ],
             github: 'https://github.com/alejfrossi/portfolio-vscode',
-            demo: 'https://portfolio-vscode-xi.vercel.app/'
+            demo: 'https://portfolio-alejfrossi.vercel.app/'
         },
         {
             id: 'task-manager',
@@ -86,7 +86,7 @@ export const projectsData: Record<Language, Project[]> = {
                 'Responsive design tailored to provide a VS Code-like experience on mobile.'
             ],
             github: 'https://github.com/alejfrossi/portfolio-vscode',
-            demo: 'https://portfolio-vscode-xi.vercel.app/'
+            demo: 'https://portfolio-alejfrossi.vercel.app/'
         },
         {
             id: 'task-manager',

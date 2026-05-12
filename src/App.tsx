@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import type { Language, FileId } from './data/types';
 import { texts, filesData } from './data/portfolio';
+import { FileContent } from './components/FileContent';
 
 function App() {
   const [lang, setLang] = useState<Language>('AR');
@@ -107,9 +108,9 @@ function App() {
                     {/* --- EDITOR --- */}
                     <section className="editor-view" style={{ justifyContent: activeFile ? 'initial' : 'center', alignItems: activeFile ? 'initial' : 'center' }}>
                         {activeFile ? (
-                            <div style={{ padding: '20px', color: 'var(--text-color)' }}>
-                                <h2>Mostrando el contenido de: {activeFile}</h2>
-                            </div>
+                            
+                            <FileContent activeFile={activeFile} lang={lang} />
+                            
                         ) : (
                             <div className="empty-state">
                                 <span className="material-symbols-outlined large-icon" style={{ fontSize: '60px' }}>code_blocks</span>

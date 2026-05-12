@@ -7,6 +7,12 @@ function App() {
   const [lang, setLang] = useState<Language>('AR');
   const [openFiles, setOpenFiles] = useState<FileId[]>([]);
   const [activeFile, setActiveFile] = useState<FileId | null>(null);
+  const [isLight, setIsLight] = useState(false);
+  
+  const toggleTheme = () => {
+    setIsLight(!isLight);
+    document.body.classList.toggle('light-theme');
+  };
   
   const toggleLanguage = () => {
     setLang(prevLang => (prevLang === 'AR' ? 'EN' : 'AR'));
@@ -43,8 +49,10 @@ function App() {
           <button onClick={toggleLanguage} className="control-btn">
             {texts[lang].langNext}
           </button>
-          <button className="control-btn">
-            <span className="material-symbols-outlined">light_mode</span>
+          <button onClick={toggleTheme} className="control-btn">
+            <span className="material-symbols-outlined">
+              {isLight ? 'dark_mode' : 'light_mode'}
+            </span>
           </button>
         </div>
       </nav>
@@ -124,10 +132,9 @@ function App() {
                         <div className="status-left">
                             <span id="status-msg">{texts[lang].statusMsg}</span>
                         </div>
-                        <div className="status-right">
+                        <div className="status-right flex-row gap-15">
                             <span>{lang}</span>
                             <span>UTF-8</span>
-                            <span>React TS</span>
                         </div>
                     </div>
 

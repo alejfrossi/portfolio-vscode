@@ -1,18 +1,18 @@
 import { Resend } from 'resend';
 
-const resend = new Resend((globalThis as any).process?.env?.RESEND_API_KEY);
+const resend = new Resend(String(process.env.RESEND_API_KEY));
 
 export default async function handler(req: any, res: any) {
     if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method not allowed' });
-  }
+      return res.status(405).json({ error: 'Method not allowed' });
+    }
 
   const { user_name, user_email, message } = req.body;
 
   try {
     const data = await resend.emails.send({
       from: 'Portfolio <onboarding@resend.dev>', 
-      to: 'alejfrossi@gmail.com',
+      to: 'alejfrossi.uni@gmail.com',
       subject: `Nuevo mensaje en Portfolio de: ${user_name}`,
       reply_to: user_email,
       html: `

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import type { Language, FileId, Project } from '../data/types';
 import { texts, projectsData } from '../data/portfolio';
 
@@ -52,6 +52,34 @@ const ProjectCard = ({ project, lang }: { project: Project, lang: Language }) =>
 };
 
 export const FileContent = ({ activeFile, lang }: { activeFile: FileId, lang: Language }) => {
+
+    const form = useRef<HTMLFormElement>(null);
+    const [status, setStatus] = useState('');
+
+    const sendEmail = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setStatus(lang === 'AR' ? 'Enviando...' : 'Sending...');
+
+        const formData = new FormData(form.current!);
+        const data = Object.fromEntries(formData.entries());
+
+        try {
+            const response = await fetch('/api/send', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data),
+            });
+
+            if (response.ok) {
+                setStatus(lang === 'AR' ? '¡Mensaje enviado con éxito!' : 'Message sent successfully!');
+                form.current?.reset();
+            } else {
+                throw new Error('Error en el servidor');
+            }
+        } catch (err) {
+            setStatus(lang === 'AR' ? 'Hubo un error, intenta de nuevo.' : 'Error, please try again.');
+        }
+    };
     
     if (activeFile === 'readme') {
         return (
@@ -151,6 +179,43 @@ export const FileContent = ({ activeFile, lang }: { activeFile: FileId, lang: La
                 ))}
                 
                 ];
+            </div>
+        );
+    }
+
+    if (activeFile === 'contacto') {
+        return (
+            <div className="container">
+                <h1 className="title">{lang === 'AR' ? '# Contacto' : '# Contact'}</h1>
+                <div className="content-card">
+                    <p className="color-text mb-10" style={{marginBottom: '20px'}}>
+                        {lang === 'AR' 
+                            ? 'Si tienes alguna propuesta o consulta, no dudes en escribirme.' 
+                            : 'If you have any proposal or query, feel free to write to me.'}
+                    </p>
+                    
+                    <form ref={form} onSubmit={sendEmail} className="flex-col gap-15">
+                        <div className="flex-col gap-8">
+                            <label className="fs-14 color-cyan">{lang === 'AR' ? 'Nombre' : 'Name'}</label>
+                            <input type="text" name="user_name" required className="action-btn" style={{backgroundColor: 'var(--bg-main)', border: '1px solid var(--border-color)', color: 'white', padding: '10px', width: '100%', boxSizing: 'border-box'}} />
+                        </div>
+                        <div className="flex-col gap-8">
+                            <label className="fs-14 color-cyan">Email</label>
+                            <input type="email" name="user_email" required className="action-btn" style={{backgroundColor: 'var(--bg-main)', border: '1px solid var(--border-color)', color: 'white', padding: '10px', width: '100%', boxSizing: 'border-box'}} />
+                        </div>
+                        <div className="flex-col gap-8">
+                            <label className="fs-14 color-cyan">{lang === 'AR' ? 'Mensaje' : 'Message'}</label>
+                            <textarea name="message" required rows={5} className="action-btn" style={{backgroundColor: 'var(--bg-main)', border: '1px solid var(--border-color)', color: 'white', padding: '10px', width: '100%', boxSizing: 'border-box', fontFamily: 'inherit'}} />
+                        </div>
+                        
+                        <button type="submit" className="button w-fit border-none cursor-pointer" style={{backgroundColor: 'var(--accent-blue)', marginTop: '10px'}}>
+                            <span className="material-symbols-outlined">send</span>
+                            <span>{lang === 'AR' ? 'Enviar Mensaje' : 'Send Message'}</span>
+                        </button>
+
+                        {status && <p className="fs-14 color-green mt-10">{status}</p>}
+                    </form>
+                </div>
             </div>
         );
     }

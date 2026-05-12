@@ -129,12 +129,14 @@ export const filesData: Record<Language, FileConfig[]> = {
         { id: 'readme', title: 'README.md', icon: 'description', color: '#4ec9b0' },
         { id: 'inicio', title: 'inicio.js', icon: 'terminal', color: '#3776ab' },
         { id: 'sobre-mi', title: 'sobre-mi.py', icon: 'person', color: '#f1e05a' },
-        { id: 'proyectos', title: 'proyectos.jsx', icon: 'folder_open', color: '#995590' }
+        { id: 'proyectos', title: 'proyectos.jsx', icon: 'folder_open', color: '#995590' },
+        { id: 'contacto', title: 'contacto.html', icon: 'mail', color: '#e34c26' }
     ],
     'EN': [
         { id: 'readme', title: 'README.md', icon: 'description', color: '#4ec9b0' },
         { id: 'inicio', title: 'home.js', icon: 'terminal', color: '#3776ab' },
         { id: 'sobre-mi', title: 'about-me.py', icon: 'person', color: '#f1e05a' },
-        { id: 'proyectos', title: 'projects.jsx', icon: 'folder_open', color: '#995590' }
+        { id: 'proyectos', title: 'projects.jsx', icon: 'folder_open', color: '#995590' },
+        { id: 'contacto', title: 'contact.html', icon: 'mail', color: '#e34c26' }
     ]
 };

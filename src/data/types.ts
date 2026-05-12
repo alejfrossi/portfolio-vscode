@@ -19,7 +19,7 @@ export interface UITexts {
     featHide: string;
 }
 
-export type FileId = 'readme' | 'inicio' | 'sobre-mi' | 'proyectos';
+export type FileId = 'readme' | 'inicio' | 'sobre-mi' | 'proyectos' | 'contacto';
 
 export interface FileConfig {
     id: FileId;

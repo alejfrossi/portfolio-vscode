@@ -1,4 +1,4 @@
-import type { Language, Project, UITexts, FileId, FileConfig } from './types';
+import type { Language, Project, UITexts, FileConfig } from './types';
 
 export const texts: Record<Language, UITexts> = {
     'AR': {

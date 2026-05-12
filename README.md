@@ -4,7 +4,7 @@ Un portfolio personal interactivo desarrollado con **React** y **TypeScript**, d
 
 * **Link:** https://portfolio-alejfrossi.vercel.app/
 
-## 🚀 Características Principales
+## Características Principales
 
 * **Interfaz Realista de IDE**: Incluye barra de actividades, explorador de archivos dinámico, sistema de pestañas funcionales y barra de estado.
 * **Gestión de Estados**: Manejo avanzado de archivos abiertos y navegación entre pestañas utilizando el hook `useState` de React.
@@ -13,16 +13,14 @@ Un portfolio personal interactivo desarrollado con **React** y **TypeScript**, d
 * **Contacto Automatizado**: Formulario de contacto integrado con la API de **Resend** a través de **Vercel**.
 * **Arquitectura Escalable**: Separación estricta entre la capa de datos (proyectos y textos) y la lógica de renderizado de componentes.
 
-## 🛠️ Tecnologías Utilizadas
+## Tecnologías Utilizadas
 
 * **Frontend**: React, TypeScript, Vite.
 * **Estilos**: CSS moderno 
 * **Backend / API**: Resend API y Vercel Functions para el manejo de correos electrónicos.
 * **Iconografía**: Material Symbols (Google Fonts) y Lucide Icons
 
-## 📖 Instalación y Uso
+## Instalación y Uso
 
-1. Clona el repositorio en tu máquina local.
+1. Clona el repositorio.
 2. Instala las dependencias necesarias: `npm install`.
-3. Configura tu variable de entorno `RESEND_API_KEY` en tu archivo `.env`.
-4. Inicia el servidor de desarrollo: `npm run dev`.

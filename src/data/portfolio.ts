@@ -35,7 +35,7 @@ export const projectsData: Record<Language, Project[]> = {
                 'Diseño responsive adaptado para ofrecer una experiencia similar a VS Code en móviles.'
             ],
             github: 'https://github.com/alejfrossi/portfolio-vscode',
-            demo: '#'
+            demo: 'https://portfolio-vscode-xi.vercel.app/'
         },
         {
             id: 'task-manager',
@@ -76,7 +76,7 @@ export const projectsData: Record<Language, Project[]> = {
             id: 'portfolio-react',
             title: 'My Portfolio - VS Code Clone',
             description: 'My personal portfolio migrated to a modern stack, recreating an IDE experience with state-based navigation.',
-            technologies: ['React', 'TypeScript', 'Vite', 'CSS'],
+            technologies: ['React', 'TypeScript', 'Vite', 'CSS', 'Resend', 'Vercel'],
             features: [
                 'Modular architecture based on reusable components.',
                 'Global state management for open files and tab navigation.',
@@ -86,7 +86,7 @@ export const projectsData: Record<Language, Project[]> = {
                 'Responsive design tailored to provide a VS Code-like experience on mobile.'
             ],
             github: 'https://github.com/alejfrossi/portfolio-vscode',
-            demo: '#'
+            demo: 'https://portfolio-vscode-xi.vercel.app/'
         },
         {
             id: 'task-manager',

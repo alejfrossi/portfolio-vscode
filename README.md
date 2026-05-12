@@ -1,73 +1,26 @@
-# React + TypeScript + Vite
+# VS Code Clone Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Un portfolio personal interactivo desarrollado con **React** y **TypeScript**, diseñado para replicar la experiencia visual y funcional del editor **Visual Studio Code**. Este proyecto demuestra habilidades en arquitectura de componentes, gestión de estados complejos y despliegue de funciones serverless.
 
-Currently, two official plugins are available:
+## 🚀 Características Principales
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+* **Interfaz Realista de IDE**: Incluye barra de actividades, explorador de archivos dinámico, sistema de pestañas funcionales y barra de estado.
+* **Gestión de Estados**: Manejo avanzado de archivos abiertos y navegación entre pestañas utilizando el hook `useState` de React.
+* **Soporte Bilingüe**: Diccionarios de datos tipados que permiten alternar entre Español (AR) e Inglés (EN) de forma instantánea.
+* **Temas Dinámicos**: Implementación de modo claro y oscuro mediante variables de CSS y manipulación del tema en tiempo real.
+* **Contacto Automatizado**: Formulario de contacto integrado con la API de **Resend** a través de **Vercel**.
+* **Arquitectura Escalable**: Separación estricta entre la capa de datos (proyectos y textos) y la lógica de renderizado de componentes.
 
-## React Compiler
+## 🛠️ Tecnologías Utilizadas
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* **Frontend**: React, TypeScript, Vite.
+* **Estilos**: CSS moderno 
+* **Backend / API**: Resend API y Vercel Functions para el manejo de correos electrónicos.
+* **Iconografía**: Material Symbols (Google Fonts) y Lucide Icons
 
-## Expanding the ESLint configuration
+## 📖 Instalación y Uso
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+1. Clona el repositorio en tu máquina local.
+2. Instala las dependencias necesarias: `npm install`.
+3. Configura tu variable de entorno `RESEND_API_KEY` en tu archivo `.env`.
+4. Inicia el servidor de desarrollo: `npm run dev`.

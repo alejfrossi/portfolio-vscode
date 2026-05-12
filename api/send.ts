@@ -14,7 +14,7 @@ export default async function handler(req: any, res: any) {
       from: 'Portfolio <onboarding@resend.dev>', 
       to: 'alejfrossi@gmail.com',
       subject: `Nuevo mensaje en Portfolio de: ${user_name}`,
-      replyTo: user_email,
+      reply_to: user_email,
       html: `
         <h2>Nuevo contacto desde el Portfolio</h2>
         <p><strong>Nombre:</strong> ${user_name}</p>

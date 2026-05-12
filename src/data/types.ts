@@ -18,3 +18,12 @@ export interface UITexts {
     featShow: string;
     featHide: string;
 }
+
+export type FileId = 'readme' | 'inicio' | 'sobre-mi' | 'proyectos';
+
+export interface FileConfig {
+    id: FileId;
+    title: string;
+    icon: string;
+    color: string;
+}

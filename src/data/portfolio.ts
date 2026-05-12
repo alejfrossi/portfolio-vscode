@@ -1,4 +1,4 @@
-import { Language, Project, UITexts } from './types';
+import type { Language, Project, UITexts, FileId, FileConfig } from './types';
 
 export const texts: Record<Language, UITexts> = {
     'AR': {
@@ -89,5 +89,20 @@ export const projectsData: Record<Language, Project[]> = {
             github: 'https://github.com/alejfrossi/sistema-gestion-stock',
             demo: 'https://sistema-stock-alejo-rossi.onrender.com/'
         }
+    ]
+};
+
+export const filesData: Record<Language, FileConfig[]> = {
+    'AR': [
+        { id: 'readme', title: 'README.md', icon: 'description', color: '#4ec9b0' },
+        { id: 'inicio', title: 'inicio.js', icon: 'terminal', color: '#3776ab' },
+        { id: 'sobre-mi', title: 'sobre-mi.py', icon: 'person', color: '#f1e05a' },
+        { id: 'proyectos', title: 'proyectos.jsx', icon: 'folder_open', color: '#995590' }
+    ],
+    'EN': [
+        { id: 'readme', title: 'README.md', icon: 'description', color: '#4ec9b0' },
+        { id: 'inicio', title: 'home.js', icon: 'terminal', color: '#3776ab' },
+        { id: 'sobre-mi', title: 'about-me.py', icon: 'person', color: '#f1e05a' },
+        { id: 'proyectos', title: 'projects.jsx', icon: 'folder_open', color: '#995590' }
     ]
 };
